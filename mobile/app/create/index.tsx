@@ -9,6 +9,7 @@ import { Header } from '@/components/header';
 import { Select } from '@/components/input/select';
 
 import { useDataStore } from '@/store/user';
+import { router } from 'expo-router';
 
 const scheme = z.object({
     gender: z.string().min(1, { message: 'O sexo é obrigatiório' }),
@@ -55,7 +56,7 @@ export default function Create() {
             objective: data.objective,
         });
 
-        console.log(data);
+        router.push('/nutrition');
     }
 
     return (
